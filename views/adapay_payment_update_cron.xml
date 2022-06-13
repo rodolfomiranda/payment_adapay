@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <record model="ir.cron" id="cron_adapay_update_transactions">
+    <field name="name">Update payments status from AdaPay</field>
+    <field name="model_id" ref="payment.model_payment_transaction"/>
+    <field name="state">code</field>
+    <field name="code">model._adapay_update_payment_schedule()</field>
+    <field name="user_id" ref="base.user_root"/>
+    <field name="interval_number">3</field> <!-- To decide clearly -->
+    <field name="interval_type">minutes</field>
+    <field name="numbercall">-1</field>
+  </record>
+</odoo>

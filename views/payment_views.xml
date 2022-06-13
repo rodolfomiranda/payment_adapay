@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="acquirer_form_adapay" model="ir.ui.view">
+            <field name="name">acquirer.form.adapay</field>
+            <field name="model">payment.acquirer</field>
+            <field name="inherit_id" ref="payment.acquirer_form"/>
+            <field name="arch" type="xml">
+                <xpath expr='//group[@name="acquirer"]' position='inside'>
+                    <group attrs="{'invisible': [('provider', '!=', 'adapay')]}">
+                        <field name="adapay_api_key" attrs="{'required': [('provider', '=', 'adapay')]}"/>
+                        <field name="adapay_expiration_minutes" attrs="{'required': [('provider', '=', 'adapay')]}"/>
+                        <field name="adapay_use_webhook" attrs="{'required': [('provider', '=', 'adapay')]}"/>
+                        <a colspan="2" href="https://docs.adapay.finance/docs/introduction/getting-started" target="_blank">Configure Ada Pay payment</a>
+                    </group>
+                </xpath>
+                <xpath expr='//group[@name="payment_followup"]' position='after'>
+                    <group string="Currency conversion providers" name="conversion_providers" attrs="{'invisible': [('provider', '!=', 'adapay')]}">
+                        <field name="conversion_provider" attrs="{'required': [('provider', '=', 'adapay')]}"/>
+                        <field name="conversion_test_mode"/>
+                        <field name="conversion_api_key" attrs="{'required': [('provider', '=', 'adapay')]}"/>
+                    </group>
+                </xpath>
+                
+                <xpath expr='//field[@name="pending_msg"]' position='replace'>
+                    <field name="adapay_status_msg_new"/>
+                    <field name="adapay_status_msg_pending"/>
+                    <field name="adapay_status_msg_payment_sent"/>
+                    <field name="adapay_status_msg_confirmed"/>
+                    <field name="adapay_status_msg_expired"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

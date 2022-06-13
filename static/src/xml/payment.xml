@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="test" xml:space="preserve">
+  <t t-name="myList" t-extend="PaymentProcessing">
+    <t t-jquery="o_payment_processing_content" t-operation="append">
+      <div class="button js_custom">
+        <select class="select custom_class">
+            <option value="xy">A lotta options </option>
+        </select>
+      </div>
+    </t>
+  </t>
+</templates>

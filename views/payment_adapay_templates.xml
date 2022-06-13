@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data> <!--TODO: set noupdate="1"-->
+        <template id="adapay_form">
+            <input type="hidden" name="data_set" t-att-data-action-url="tx_url" data-remove-me=""/>
+            <!-- seller -->
+            <input type="hidden" name='reference' t-att-value='reference'/>
+            <!-- cart -->
+            <input type="hidden" name='amount' t-att-value='amount'/>
+            <input type="hidden" name='currency_id' t-att-value='currency.id'/>
+            <input type="hidden" name='currency' t-att-value='currency.name'/>
+            <input type="hidden" name='currency_code' t-att-value='currency.display_name'/>
+            <!-- buyer -->
+            <input type="hidden" name='partner_id' t-att-value='partner_id'/>
+            <input type="hidden" name='partner_email' t-att-value='partner_email'/>
+            <input type="hidden" name='partner_lang' t-att-value='partner_lang'/>
+            <!-- conversion amount -->
+            <input type="hidden" name='ada_amount' t-att-value='ada_amount'/>
+            <input type="hidden" name='last_updated' t-att-value='last_updated'/>
+            <input type="hidden" name='ada_currency' t-att-value='ada_currency'/>
+            <input type="hidden" name='provider' t-att-value='provider'/>
+            <!-- AdaPay payment-request -->
+            <input type="hidden" name='adapay_uuid' t-att-value='adapay_uuid'/>
+            <input type="hidden" name='adapay_amount' t-att-value='adapay_amount'/>
+            <input type="hidden" name='adapay_total_amount_sent' t-att-value='adapay_confirmedAmount'/>
+            <input type="hidden" name='adapay_total_amount_left' t-att-value='adapay_pendingAmount'/>
+            <input type="hidden" name='adapay_expiration_date' t-att-value='adapay_expirationDate'/>
+            <input type="hidden" name='adapay_update_time' t-att-value='adapay_updateTime'/>
+            <input type="hidden" name='adapay_last_updated' t-att-value='adapay_updateTime'/>
+            <input type="hidden" name='adapay_expiration_minutes' t-att-value='adapay_expiration_minutes'/>
+            <input type="hidden" name='adapay_status' t-att-value='adapay_status'/>
+            <input type="hidden" name='adapay_address' t-att-value='adapay_address'/>
+        </template>
+
+        <template id="payment_adapay_page" name="Adapay processing page">
+            <div class="payment-card-component">
+                <div class="payment-card-component__container--body">
+                    <div class="payment-page-component__container--title"><t t-raw="title"/></div>
+                    <div class="payment-page-component__container--card-container">
+                        <div class="card-component payment-page-component__container--card pending">
+                                <div class="payment-qr-component">
+                                    <div class="payment-qr-component__container">
+                                        <div class="payment-qr-component__container--header">
+                                            <div class="payment-qr-component__container--header-total"><t t-esc="adapay_amount"/> ADA</div>
+                                            <t t-if="adapay_status=='new' or adapay_status=='pending'">
+                                                <div class="countdown-timer-component">
+                                                    <div class="countdown-timer-component__inner">
+                                                        <p id="expiration_clock"></p>
+                                                    </div>
+                                                </div>
+                                            </t>
+                                        </div>
+                                    
+                                        <t t-if="adapay_status=='new' or adapay_status=='pending'">
+                                            <div class="payment-qr" height="200" width="200" style="height: 200px; width: 200px;">
+                                                <img t-att-src="qr_code" style="height: 200px; width: 200px;"/>
+                                            </div>
+                                            <div class="payment-qr-component__container--address">
+                                                <div class="payment-address-component">
+                                                    <div class="payment-address--title" id="payment-address--title"><t t-esc="page_terms['address']"/></div>
+                                                    <div content-editable="true" class="payment-address" id="payment-address-adapay">
+                                                        <input type="hidden" id="adapay-address-value" t-att-value="adapay_address" />
+                                                        <t t-esc="adapay_address"/>
+                                                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAQCAYAAAAmlE46AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAALBJREFUeNpidHdzY0ACxUDcDsSsDLjBfyCew4ImmAnEsUC8E49GaSC+DNOoD8SCQHwFiJmA2ABN8VMgvo3EZwRpnAHEwVBJECjHYosSENcDcT9MAKQxBYg1gPgOHuf5A3EHskaQs5iB+A0DfvARiDmRBZgYyASjGrEDFjhBAtgMxNpAfIZUjbVAzAvEZ0EavwKxBRCfwKPBEIjfAvEFZPfmA/EqqEm4wHMgjkMWAAgwANM3GpISwCz8AAAAAElFTkSuQmCC" alt="copy" onclick="copyToClipboard()"/>
+                                                    </div>
+                                                    
+                                                </div>
+                                            </div>
+                                        </t>
+                                    </div>
+                                </div>
+                            <div class="payment-history-component">
+                                <div class="payment-history-component--row">
+                                    <h2 class="payment-history-component--row-title"><t t-esc="page_terms['confirmed']"/></h2>
+                                    <b class="payment-history-component--row-amount"><t t-esc="adapay_total_amount_sent"/> ADA</b>
+                                </div>
+                                <div class="payment-history-component--row">
+                                    <h2 class="payment-history-component--row-title"><t t-esc="page_terms['left']"/></h2>
+                                    <b class="payment-history-component--row-amount"><t t-esc="adapay_total_amount_left"/> ADA</b>
+                                </div>
+                                <t t-if="adapay_transaction_history">
+                                    <b><t t-esc="page_terms['history']"/></b>
+                                    <t t-foreach="adapay_transaction_history" t-as="ada_tx_history">
+                                        <div class="payment-transaction-history--row">
+                                            <div class="row " style="font-size: small">
+                                                <div class="col col-6">
+                                                    <t t-esc="ada_tx_history['lastMonitoredDepth']" /> <t t-esc="page_terms['confirmations']"/>
+                                                </div>
+                                                <div class="col col-6">
+                                                    <b><t t-esc="ada_tx_history['amount']"/> ADA</b>
+                                                </div>
+                                            </div>
+                                            <div class="row payment-history-component--status">
+                                                <div class="col col-6">
+                                                    <div t-att-class="ada_tx_history['status']">
+                                                        <t t-esc="page_terms[ada_tx_history['status']]" />
+                                                    </div>
+                                                </div>
+                                                <div class="col col-6">
+                                                    <t t-esc="ada_tx_history['updateTime']"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </t>
+                                </t>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
+    </data>
+</odoo>

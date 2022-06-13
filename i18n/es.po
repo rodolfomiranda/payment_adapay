@@ -1,0 +1,481 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ada_payment_module
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-05-24 03:38+0000\n"
+"PO-Revision-Date: 2022-05-24 00:39-0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"X-Generator: Poedit 3.0.1\n"
+
+#. module: ada_payment_module
+#: code:addons/ada_payment_module/models/payment.py:0
+#, fuzzy, python-format
+msgid ""
+"\n"
+"            <ul>\n"
+"                <li>hash: $hash</li>\n"
+"                <li>amount: $amount</li>\n"
+"                <li>status: $status</li>\n"
+"                <li>confirmed: $lastMonitoredDepth / 15</li>\n"
+"            </ul><br>\n"
+"            "
+msgstr ""
+"\n"
+"<ul>\n"
+"    <li>hash: $hash</li>\n"
+"    <li>importe: $amount</li>\n"
+"    <li>estado: $status</li>\n"
+"    <li>confirmado: $lastMonitoredDepth / 15</li>\n"
+"</ul><br>\n"
+
+#. module: ada_payment_module
+#: code:addons/ada_payment_module/models/payment.py:0
+#, python-format
+msgid "; multiple order found"
+msgstr "; se han encontrado varios pedidos"
+
+#. module: ada_payment_module
+#: code:addons/ada_payment_module/models/payment.py:0
+#, python-format
+msgid "; no order found"
+msgstr "; no se ha encontrado ningún pedido"
+
+#. module: ada_payment_module
+#. openerp-web
+#: code:addons/ada_payment_module/static/src/xml/payment.xml:0
+#, python-format
+msgid "A lotta options"
+msgstr "Muchas opciones"
+
+#. module: ada_payment_module
+#: model_terms:ir.ui.view,arch_db:ada_payment_module.payment_adapay_page
+msgid "ADA"
+msgstr "ADA"
+
+#. module: ada_payment_module
+#: model:payment.acquirer,name:ada_payment_module.payment_acquirer_adapay
+msgid "Ada Pay"
+msgstr "AdaPay"
+
+#. module: ada_payment_module
+#: model:ir.model.fields,field_description:ada_payment_module.field_payment_acquirer__adapay_api_key
+msgid "AdaPay APIKEY"
+msgstr "AdaPay APIKEY"
+
+#. module: ada_payment_module
+#: model:ir.model.fields,field_description:ada_payment_module.field_payment_acquirer__adapay_status_msg_confirmed
+msgid "AdaPay Confirmed"
+msgstr "AdaPay Confirmado"
+
+#. module: ada_payment_module
+#: model:ir.model.fields,field_description:ada_payment_module.field_payment_acquirer__adapay_status_msg_new
+msgid "AdaPay New"
+msgstr "AdaPay Nuevo"
+
+#. module: ada_payment_module
+#: model:ir.model.fields,field_description:ada_payment_module.field_payment_acquirer__adapay_status_msg_pending
+msgid "AdaPay Pending"
+msgstr "AdaPay Pendiente"
+
+#. module: ada_payment_module
+#: code:addons/ada_payment_module/models/payment.py:0
+#, python-format
+msgid ""
+"AdaPay payment request created:<br>\n"
+"                Payment reference: $reference\n"
+"                <ul>\n"
+"                <li>uuid: $adapay_uuid</li>\n"
+"                <li>amount: $adapay_amount ADA</li>\n"
+"                <li>expiration: $adapay_expiration_date</li>\n"
+"                <li>address: $adapay_address</li>\n"
+"                </ul>\n"
+"                "
+msgstr ""
+"AdaPay solicitud de pago creada:<br>\n"
+"Referencia de pago: $reference\n"
+"<ul>\n"
+"  <li>uuid: $adapay_uuid</li>\n"
+"  <li>importe: $adapay_amount ADA</li>\n"
+"  <li>expira: $adapay_expiration_date</li>\n"
+"  <li>direccion: $adapay_address</li>\n"
+"</ul>"
+
+#. module: ada_payment_module
+#: model:ir.model.fields,field_description:ada_payment_module.field_payment_acquirer__adapay_status_msg_payment_sent
+msgid "AdaPay payment sent"
+msgstr "AdaPay Pago realizado"
+
+#. module: ada_payment_module
+#: model:ir.model.fields.selection,name:ada_payment_module.selection__payment_acquirer__provider__adapay
+msgid "Adapay"
+msgstr "Adapay"
+
+#. module: ada_payment_module
+#: model:ir.model.fields,field_description:ada_payment_module.field_payment_acquirer__adapay_status_msg_expired
+msgid "Adapay expired"
+msgstr "Adapay vencido"
+
+#. module: ada_payment_module
+#: code:addons/ada_payment_module/models/payment.py:0
+#, python-format
+msgid ""
+"Adapay payment update:<br>\n"
+"            Payment reference: $orderId<br>\n"
+"            uuid: $uuid\n"
+"            <ul>\n"
+"            <li>status: $status</li>\n"
+"            <li>substatus: $subStatus</li>\n"
+"            <li>amount: $amount</li>\n"
+"            <li>address: $address</li>\n"
+"            <li>pending: $pendingAmount</li>\n"
+"            <li>updated: $updateTime</li>\n"
+"            <li>expiration: $expirationDate</li>\n"
+"            $transactions_msg\n"
+"            </ul>\n"
+"            "
+msgstr ""
+"Adapay actualizacion del pago:<br>\n"
+"Referencia de pago: $orderId<br>\n"
+"uuid: $uuid\n"
+"<ul>\n"
+"  <li>estado $status</li>\n"
+"  <li>sub-estado: $subStatus</li>\n"
+"  <li>importe: $amount</li>\n"
+"  <li>direccion: $address</li>\n"
+"  <li>pendiente: $pendingAmount</li>\n"
+"  <li>actualizado: $updateTime</li>\n"
+"  <li>vencimiento: $expirationDate</li>\n"
+"  $transactions_msg\n"
+"</ul>"
+
+#. module: ada_payment_module
+#: code:addons/ada_payment_module/models/payment.py:0
+#, python-format
+msgid "Address"
+msgstr "Dirección"
+
+#. module: ada_payment_module
+#: model:ir.model.fields,field_description:ada_payment_module.field_payment_transaction__adapay_amount
+msgid "Amount in ADA"
+msgstr "Importe en ADA"
+
+#. module: ada_payment_module
+#: model:ir.model.fields,field_description:ada_payment_module.field_payment_transaction__adapay_total_amount_left
+msgid "Amount left"
+msgstr "Importe restante"
+
+#. module: ada_payment_module
+#: code:addons/ada_payment_module/models/payment.py:0
+#, python-format
+msgid "Amount left to confirm"
+msgstr "Importe a confirmar"
+
+#. module: ada_payment_module
+#: model:ir.model.fields,field_description:ada_payment_module.field_payment_transaction__adapay_total_amount_sent
+msgid "Amount sent"
+msgstr "Importe enviado"
+
+#. module: ada_payment_module
+#: model:ir.model.fields,field_description:ada_payment_module.field_payment_acquirer__conversion_api_key
+msgid "Api-Key"
+msgstr "Api-Key"
+
+#. module: ada_payment_module
+#: model:ir.model.fields.selection,name:ada_payment_module.selection__payment_acquirer__conversion_provider__coinmarket
+msgid "CoinMarket"
+msgstr "CoinMarket"
+
+#. module: ada_payment_module
+#: model_terms:ir.ui.view,arch_db:ada_payment_module.acquirer_form_adapay
+msgid "Configure Ada Pay payment"
+msgstr "Configurar AdaPay"
+
+#. module: ada_payment_module
+#: model:ir.model.fields,field_description:ada_payment_module.field_payment_acquirer__conversion_provider
+msgid "Conversion Provider"
+msgstr "Proveedor de conversión"
+
+#. module: ada_payment_module
+#: model_terms:ir.ui.view,arch_db:ada_payment_module.acquirer_form_adapay
+msgid "Currency conversion providers"
+msgstr "Proveedores de conversión de moneda"
+
+#. module: ada_payment_module
+#: code:addons/ada_payment_module/models/payment.py:0
+#, python-format
+msgid ""
+"Currency converted via $provider: $amount $currency -> \n"
+"                                        $ada_amount ADA. Last updated: $last_updated"
+msgstr ""
+"Moneda convertida por $provider: $amount $currency -> $ada_amount ADA. Última "
+"actualización: $last_updated"
+
+#. module: ada_payment_module
+#: model:ir.model.fields,help:ada_payment_module.field_payment_acquirer__adapay_use_webhook
+msgid "Disable update via webhook and do it via cron."
+msgstr "Deshabilitar la actualización por webhook y hacerlo por acciones programadas."
+
+#. module: ada_payment_module
+#: model:ir.model.fields,field_description:ada_payment_module.field_payment_acquirer__display_name
+#: model:ir.model.fields,field_description:ada_payment_module.field_payment_transaction__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: ada_payment_module
+#: model:ir.model.fields,field_description:ada_payment_module.field_payment_transaction__adapay_expiration_date
+msgid "Expiration date"
+msgstr "Fecha de vencimiento"
+
+#. module: ada_payment_module
+#: model:ir.model.fields,field_description:ada_payment_module.field_payment_transaction__adapay_expiration_minutes
+msgid "Expiration minutes"
+msgstr "Minutos de vencimiento"
+
+#. module: ada_payment_module
+#: model:ir.model.fields,field_description:ada_payment_module.field_payment_acquirer__id
+#: model:ir.model.fields,field_description:ada_payment_module.field_payment_transaction__id
+msgid "ID"
+msgstr "ID"
+
+#. module: ada_payment_module
+#: model:ir.model.fields,field_description:ada_payment_module.field_payment_acquirer____last_update
+#: model:ir.model.fields,field_description:ada_payment_module.field_payment_transaction____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: ada_payment_module
+#: model:ir.model.fields,field_description:ada_payment_module.field_payment_transaction__adapay_last_event
+msgid "Last event"
+msgstr "Último evento"
+
+#. module: ada_payment_module
+#: model:ir.model.fields,field_description:ada_payment_module.field_payment_transaction__adapay_last_updated
+msgid "Last updated"
+msgstr "Última actualización"
+
+#. module: ada_payment_module
+#: model:ir.model,name:ada_payment_module.model_payment_acquirer
+msgid "Payment Acquirer"
+msgstr "Método de Pago"
+
+#. module: ada_payment_module
+#: model:ir.model,name:ada_payment_module.model_payment_transaction
+msgid "Payment Transaction"
+msgstr "Transacción de pago"
+
+#. module: ada_payment_module
+#: model:ir.model.fields,field_description:ada_payment_module.field_payment_transaction__adapay_uuid
+msgid "Payment UUID"
+msgstr "UUID de pago"
+
+#. module: ada_payment_module
+#: model:ir.model.fields,field_description:ada_payment_module.field_payment_transaction__adapay_address
+msgid "Payment address"
+msgstr "Dirección de pago"
+
+#. module: ada_payment_module
+#: model:ir.model.fields,help:ada_payment_module.field_payment_acquirer__adapay_status_msg_confirmed
+msgid "Payment confirmed."
+msgstr "Pago confirmado."
+
+#. module: ada_payment_module
+#: model:ir.model.fields,field_description:ada_payment_module.field_payment_acquirer__adapay_expiration_minutes
+msgid "Payment request expiration (minutes)"
+msgstr "Expiración del pago (minutos)"
+
+#. module: ada_payment_module
+#: model:ir.model.fields,help:ada_payment_module.field_payment_acquirer__adapay_status_msg_new
+msgid "Payment request was created."
+msgstr "Se creó la solicitud de pago."
+
+#. module: ada_payment_module
+#: model:ir.model.fields,field_description:ada_payment_module.field_payment_transaction__adapay_status
+msgid "Payment status"
+msgstr "Estado del pago"
+
+#. module: ada_payment_module
+#: model:ir.model.fields,field_description:ada_payment_module.field_payment_transaction__adapay_substatus
+msgid "Payment sub-status"
+msgstr "Sub-estado del pago"
+
+#. module: ada_payment_module
+#: model:ir.model.fields,field_description:ada_payment_module.field_payment_acquirer__provider
+msgid "Provider"
+msgstr "Proveedor"
+
+#. module: ada_payment_module
+#: model:ir.model.fields,help:ada_payment_module.field_payment_acquirer__adapay_status_msg_pending
+msgid "Some transactions started but transactions are still left."
+msgstr "Se recibieron algunas transacciones. Restan algunas para completar el pago."
+
+#. module: ada_payment_module
+#: model:ir.model.fields,field_description:ada_payment_module.field_payment_acquirer__conversion_test_mode
+msgid "Test Mode"
+msgstr "Modo test"
+
+#. module: ada_payment_module
+#: model_terms:payment.acquirer,done_msg:ada_payment_module.payment_acquirer_adapay
+msgid "The order is done."
+msgstr "La orden está confirmada."
+
+#. module: ada_payment_module
+#: model_terms:payment.acquirer,cancel_msg:ada_payment_module.payment_acquirer_adapay
+msgid "The order was canceled."
+msgstr "La orden fue cancelada."
+
+#. module: ada_payment_module
+#: model_terms:payment.acquirer,adapay_status_msg_expired:ada_payment_module.payment_acquirer_adapay
+msgid "The payment request is expired. Please back to payment selection."
+msgstr "El pago venció. Por favor, vuelva atrás a la pantalla de pago."
+
+#. module: ada_payment_module
+#: model_terms:payment.acquirer,adapay_status_msg_confirmed:ada_payment_module.payment_acquirer_adapay
+msgid "The transaction was confirmed!"
+msgstr "La transacción fue confirmada!"
+
+#. module: ada_payment_module
+#: model:ir.model.fields,help:ada_payment_module.field_payment_acquirer__adapay_status_msg_expired
+msgid "There were no transactions in the time period."
+msgstr "No hubo transacciones antes del vencimiento."
+
+#. module: ada_payment_module
+#: model_terms:payment.acquirer,adapay_status_msg_new:ada_payment_module.payment_acquirer_adapay
+msgid "To complete your payment, please send ADA to the address below."
+msgstr "Para completar el pago, por favor envíe ADA a la siguiente dirección."
+
+#. module: ada_payment_module
+#: code:addons/ada_payment_module/models/payment.py:0
+#, python-format
+msgid "Total amount confirmed"
+msgstr "Monto total confirmado"
+
+#. module: ada_payment_module
+#: model:ir.model.fields,field_description:ada_payment_module.field_payment_transaction__adapay_transaction_history
+msgid "Transaction history"
+msgstr "Historial de transacciones"
+
+#. module: ada_payment_module
+#: code:addons/ada_payment_module/models/payment.py:0
+#, python-format
+msgid ""
+"Transaction update:<br>\n"
+"                <ul>\n"
+"                    <li>uuid: $paymentRequestUuid</li>\n"
+"                    <li>hash: $hash</li>\n"
+"                    <li>amount: $amount</li>\n"
+"                    <li>status: $status</li>\n"
+"                    <li>confirmed: $lastMonitoredDepth / 15</li>\n"
+"                    <li>updated: $updateTime</li>\n"
+"                </ul>\n"
+"                "
+msgstr ""
+"Actualización de transacción:<br>\n"
+"<ul>\n"
+"    <li>uuid: $paymentRequestUuid</li>\n"
+"    <li>hash: $hash</li>\n"
+"    <li>importe: $amount</li>\n"
+"    <li>estado: $status</li>\n"
+"    <li>confirmado: $lastMonitoredDepth / 15</li>\n"
+"    <li>actualizado: $updateTime</li>\n"
+"</ul>"
+
+#. module: ada_payment_module
+#: model:ir.model.fields,help:ada_payment_module.field_payment_acquirer__adapay_status_msg_payment_sent
+msgid "Transactions amount are completed."
+msgstr "Los montos de las transacciones están completas."
+
+#. module: ada_payment_module
+#: code:addons/ada_payment_module/models/payment.py:0
+#, python-format
+msgid "Transactions history"
+msgstr "Historial de transacciones"
+
+#. module: ada_payment_module
+#: model:ir.actions.server,name:ada_payment_module.cron_adapay_update_transactions_ir_actions_server
+#: model:ir.cron,cron_name:ada_payment_module.cron_adapay_update_transactions
+#: model:ir.cron,name:ada_payment_module.cron_adapay_update_transactions
+msgid "Update payments status from AdaPay"
+msgstr "Actualizar el estado del pago de AdaPay"
+
+#. module: ada_payment_module
+#: model:ir.model.fields,field_description:ada_payment_module.field_payment_transaction__adapay_update_time
+msgid "Update time"
+msgstr "Hora de actualización"
+
+#. module: ada_payment_module
+#: model:ir.model.fields,field_description:ada_payment_module.field_payment_acquirer__adapay_use_webhook
+msgid "Use WebHook"
+msgstr "Usar Webhook"
+
+#. module: ada_payment_module
+#: code:addons/ada_payment_module/models/payment.py:0
+#, python-format
+msgid "We cannot create the AdaPay payment request. Please try again."
+msgstr "No se pudo crear la solicitud del pago en AdaPay. Por favor intenta de nuevo."
+
+#. module: ada_payment_module
+#: code:addons/ada_payment_module/models/payment.py:0
+#, python-format
+msgid "We cannot get the ADA currency rate. Please try again."
+msgstr ""
+"No se pudo realizar la conversión a la moneda ADA. Por favor intente de nuevo."
+
+#. module: ada_payment_module
+#: model_terms:payment.acquirer,adapay_status_msg_pending:ada_payment_module.payment_acquirer_adapay
+msgid ""
+"We have received some transactions. Transactions remain to complete the payment."
+msgstr "Recibimos algunas transacciones. Restan transacciones para completar el pago."
+
+#. module: ada_payment_module
+#: model_terms:payment.acquirer,pre_msg:ada_payment_module.payment_acquirer_adapay
+msgid "We will convert the amount to the ADA currency."
+msgstr "Convertiremos el monto a la moneda ADA."
+
+#. module: ada_payment_module
+#: model_terms:payment.acquirer,auth_msg:ada_payment_module.payment_acquirer_adapay
+msgid "Your payment has been authorized."
+msgstr "El pago fue autorizado."
+
+#. module: ada_payment_module
+#: model_terms:payment.acquirer,adapay_status_msg_payment_sent:ada_payment_module.payment_acquirer_adapay
+msgid "Your payment was received! You payment is pending for confirmation."
+msgstr "El pago fue recibido y está pendiente de confirmación."
+
+#. module: ada_payment_module
+#: code:addons/ada_payment_module/models/payment.py:0
+#, python-format
+msgid "confirmed"
+msgstr "confirmado"
+
+#. module: ada_payment_module
+#: model_terms:ir.ui.view,arch_db:ada_payment_module.payment_adapay_page
+msgid "copy"
+msgstr "copiar"
+
+#. module: ada_payment_module
+#: code:addons/ada_payment_module/models/payment.py:0
+#, python-format
+msgid "of 15 confirmations"
+msgstr "de 15 confirmaciones"
+
+#. module: ada_payment_module
+#: code:addons/ada_payment_module/models/payment.py:0
+#, python-format
+msgid "pending"
+msgstr "pendiente"
+
+#. module: ada_payment_module
+#: code:addons/ada_payment_module/models/payment.py:0
+#, python-format
+msgid "received data for reference %s"
+msgstr "Se recibieron datos para la referencia %s"

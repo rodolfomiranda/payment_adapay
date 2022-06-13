@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="payment_acquirer_adapay" model="payment.acquirer">
+            <field name="provider">adapay</field>
+            <field name="name">Ada Pay</field>
+            <field name="image_128" type="base64" file="payment_adapay/static/src/img/pay-with-ada.png"/>
+            <field name="pre_msg">We will convert the amount to the ADA currency.</field>
+            <field name="pending_msg"></field>
+            <field name="done_msg">The order is done.</field>
+            <field name="cancel_msg">The order was canceled.</field>
+            <field name="adapay_status_msg_new">To complete your payment, please send ADA to the address below.</field>
+            <field name="adapay_status_msg_pending">We have received some transactions. Transactions remain to complete the payment.</field>
+            <field name="adapay_status_msg_payment_sent">Your payment was received! You payment is pending for confirmation.</field>
+            <field name="adapay_status_msg_confirmed">The transaction was confirmed!</field>
+            <field name="adapay_status_msg_expired">The payment request is expired. Please back to payment selection.</field>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="view_template_id" ref="adapay_form"/>
+            <field name="payment_icon_ids" eval='[(6, 0, [ref("payment_adapay.payment_icon_adapay")])]'/>
+            <field name="description" type="html">
+                <p>
+                    Accept ADA payments.<br/>
+                    Direct. Secure. From Anywhere. For Everyone.
+                </p>
+                <a href="https://adapay.finance/" target="_blank">AdaPay Website</a>
+                <ul class="list-inline">
+                    <li class="list-inline-item"><i class="fa fa-check"/>Online Payment</li>
+                    <li class="list-inline-item"><i class="fa fa-check"/>Payment Status Tracking</li>
+                </ul>
+            </field>
+        </record>
+
+    </data>
+</odoo>

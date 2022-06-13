@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="payment_icon_adapay" model="payment.icon">
+        <field name="name">ADAPay</field>
+        <field name="image" type="base64" file="payment_adapay/static/src/img/pay-with-ada.svg"/>
+    </record>
+</odoo>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="assets_frontend_adapat" inherit_id="web.assets_frontend">
+    
+        <xpath expr="link[last()]" position="after">
+            <link rel="stylesheet" type="text/css" href="/payment_adapay/static/src/css/adapay_payment.css"/>
+        </xpath>
+
+        <xpath expr="script[last()]" position="after">
+                <script type="text/javascript" src="/payment_adapay/static/src/js/adapay_processing.js"></script>
+        </xpath>
+
+        <xpath expr="script[last()]" position="after">
+                <script type="text/javascript" src="/payment_adapay/static/src/js/copy_clipboard.js"></script>
+        </xpath>
+
+    </template>
+</odoo>
