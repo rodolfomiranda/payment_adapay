@@ -8,6 +8,7 @@
     'version': '0.1',
     'description': """Accept ADA payments. Direct. Secure. From Anywhere. For Everyone""",
     'depends': ['payment'],
+    'images': ['main_screenshot.png'],
     'data': [
         'data/payment_icon.xml',
         'views/payment_views.xml',
