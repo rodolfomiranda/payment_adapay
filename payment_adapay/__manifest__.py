@@ -5,6 +5,7 @@
     'category': 'Accounting/Payment Acquirers',
     'sequence': 400,
     'summary': 'Payment Acquirer: Adapay Implementation',
+    'author': 'Rodolfo Miranda',
     'version': '0.1',
     'description': """Accept ADA payments. Direct. Secure. From Anywhere. For Everyone""",
     'depends': ['payment'],
