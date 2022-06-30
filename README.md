@@ -46,3 +46,25 @@ Otherwise the module will use the ADA-Pay API to update the payment status every
 
 ---
 This module was tested in Odoo 14
+
+### Installation in Odoo.sh:
+
+1. Create new project in Odoo.sh:
+	- link to github
+	- add subscription
+	- use Odoo version 14.0
+	- deploy
+2. Once deployed and pass all Test --> Connect to instance
+3. From Applications install:
+	- Accounting
+	- eCommerce
+	- ADA pay
+4. Access Accountng —> Configuration —> Payment Acquirers	—> ADA Pay
+	- configure ADAPay API KEY
+	- payment journal as Bank
+	- Coinmarket API KEI
+	- enable as Test Mode
+5. From  Website app —> Go TO WEBSITE
+	- make a purchase
+	- pay with test ADA
+	- see confirmation screen at the end of the process
